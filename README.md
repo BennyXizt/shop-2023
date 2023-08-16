@@ -1,1 +1,1 @@
-# shop-2023
+# Works on vanilla js (typescript), express js, scss
