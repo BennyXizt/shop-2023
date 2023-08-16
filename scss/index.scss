@@ -1,0 +1,321 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+
+  &.active {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+._container {
+  width: 1320px;
+  margin: 0 auto;
+}
+
+.header {
+  color: white;
+
+
+  &__container {
+    background-color: rgb(35, 33, 54);
+    padding: 20px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__navigate {
+    
+    &-list {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      & > *:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+    &-link {
+      color: inherit;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      align-items: center;
+
+      &>*:not(:first-child) {
+        margin-left: 10px;
+      }
+    }
+
+    &-image {
+      display: block;
+      width: 30px;
+      height: 30px;
+      position: relative;
+    }
+
+    &-icon {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+    }
+
+    &-counter {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        
+        width: 100%;
+        height: 100%;
+      }
+      &::before {
+        content: attr(data-label);
+        top: -8px;
+        right: 4px;
+        z-index: 1;
+      }
+      &::after {
+        width: 20px;
+        height: 20px;
+        top: -10px;
+        right: -10px;
+        border-radius: 100%;
+        background-color: orange;
+       
+      }
+    }
+  }
+}
+
+.products {
+  &__list {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    & > *:nth-child(n + 4) {
+      margin-top: 20px;
+    }
+  }
+  &__item {
+    flex: 0 0 33%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+    & > *:not(:first-child) {
+      margin-top: 10px;
+    }
+
+    &-icon {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    &-add {
+      padding: 8px 14px;
+      background-color: transparent;
+      color: orange;
+      border: 2px solid orange;
+      cursor: pointer;
+    }
+  }
+  &__pagination {
+    margin: 20px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    & > *:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    &-item {
+      padding: 4px 6px;
+      background-color: orange;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 20%);
+
+  &__container {
+    width: 800px;
+    height: 400px;
+    overflow: scroll;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+  }
+  &__hidden {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    text-align: center;
+    padding: 20px;
+  }
+
+  &__body {
+    padding: 20px;
+    & > *:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+  &__item {
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > * {
+      flex: 0 0 50%;
+    }
+
+    &-button {
+      padding: 4px;
+      background-color: transparent;
+      border: 1px solid orange;
+      cursor: pointer;
+
+      &--add-product {
+        margin: 0 auto;
+      }
+    }
+
+    &-input {
+      padding: 5px;
+      border: 1px solid orange;
+    }
+  }
+}
+
+.authorise {
+  margin-top: 40px;
+  height: 300px;
+
+  & > * {
+    flex: 0 0 100%;
+  }
+  &__container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  &__wrapper {
+    border: 1px solid orange;
+    border-radius: 20px;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: all 0.5s ease-in-out;
+
+    &--signup {
+      top: 1800px;
+    }
+    &--signin {
+      top: 0px;
+    }
+  }
+  &__subtitle {
+    text-align: center;
+  }
+  &__list {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+
+    & > * {
+      margin-top: 20px;
+    }
+  }
+  &__item {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+   &-input {
+    padding: 5px;
+    border: 1px solid orange;
+   }
+   &-button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid orange;
+    padding: 5px 14px;
+   }
+   &-label {
+    & a {
+      color: orange;
+    }
+   }
+  }
+}
